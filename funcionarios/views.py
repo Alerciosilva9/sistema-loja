@@ -1,21 +1,16 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 from .models import Funcionario
 # Create your views here.
 
 
-def hello(request):
-
+@login_required
+def listar(request):
     funcionarios = Funcionario.objetos.all()
 
-    for funcionario in funcionarios:
-        print("THS")
-        print(funcionario)
-
-    
-
-
     contexto = {
+        'currentuser':request.user,
         'funcionarios':funcionarios
     }
         

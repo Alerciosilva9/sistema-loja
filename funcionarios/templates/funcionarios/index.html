@@ -6,6 +6,27 @@
 
 
 <body >
+    <header class="p-2 bg-dark text-white">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-lg-end">
+           
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2  mb-md-0">
+                {% load account %}
+
+                
+              
+                <li>Bem Vindo! {% user_display user %}</li>
+            </ul>
+    
+            
+    
+            <div class="text-end">
+              
+              <a class="fcc-btn" href="/accounts/logout"><button type="button" class="btn btn-warning">Sair</button></a>  
+            </div>
+          </div>
+        </div>
+      </header>
     <table class="table">
         <tr>
             <th>Nome</th>
