@@ -28,15 +28,12 @@
         <h2>Funcionários Cadastrados</h2>
       </div>
 
-      
+     
 
 
 
       <div class="container">
-        <form method="get" action="/funcionarios/buscar">
-            <input class="form-control py-2 border-right-0 border" type="search" name="nome" placeholder="Informe o nome do funcionário..." />
-            <button type="submit">Buscar</button>
-        </form>
+        <a href="{% url 'listar' %}">Voltar</a>
     <table class="table">
         <tr class="thead-light">
             <th>Nome</th>
@@ -71,29 +68,5 @@
         {% endif %}
     </div>
 </div>
-
-
-
-
-    <div style="text-align: center;" class="container text-capitalize">
-        <h2 class="">Cadastrar Novo Funcionario</h2>
-        <form action="{% url 'funcionarios_cadastro' %}" class="form-control-sm" method="post">
-            {% csrf_token %}
-            {{form}}
-            <!-- 
-            
-            Nome<input name="nome" class="form-control-sm" type="text">
-            Sobrenome<input name="sobrenome" class="form-control-sm" type="text">
-            CPF<input name="cpf" type="text">
-            Tempo de Serviço<input name="tempo_de_servico" class="form-control-sm" type="text">
-            Remuneração<input name="remuneracao" class="form-control-sm" type="text">!-->
-            <button class="form-control-sm">Cadastrar</button>
-        </form>
-    </div>
-
-
-    <div>
-        <h3>Obrigado</h3>
-    </div>
 </body>
 
